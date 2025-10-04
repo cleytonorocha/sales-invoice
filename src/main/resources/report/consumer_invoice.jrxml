@@ -1,0 +1,82 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="consumer_invoice" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7c2effa3-39c2-4d93-9c6f-b44794119b2c">
+	<query language="sql"><![CDATA[]]></query>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch"/>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="380" splitType="Stretch">
+		<element kind="rectangle" uuid="2b3d6529-0454-4b9a-9c8d-308f945259eb" x="-20" y="60" width="595" height="320"/>
+		<element kind="textField" uuid="7820ec4b-1fbb-41ae-80ce-201ce7e2cf81" x="-20" y="60" width="80" height="50">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="cf0a50ef-f1d8-4d35-a1eb-ef31d04ba168" x="-20" y="110" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="6f2c38b8-ba9e-418c-9c48-b68224467add" x="60" y="60" width="290" height="50">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="56451d83-b39a-44ee-b2bf-a77cfcf52a31" x="350" y="60" width="100" height="50">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="09fa8b47-280b-4e2d-a397-a718977c76fd" x="450" y="60" width="125" height="50">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="ca301c76-7027-452e-8d77-06bb28757bd2" x="-20" y="140" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="66d665d1-c4c0-4aca-8f71-4906231d2a80" x="-20" y="170" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="8056110a-082d-43d7-b4b0-6e8cc3e57122" x="-20" y="200" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="fcffcbf4-6b7a-4c1f-90f1-5adaa7622265" x="-20" y="230" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="9f926fb0-668b-445c-b286-7a82cdebc664" x="-20" y="260" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="85748c45-76c3-40a6-9e95-e4953d40cfec" x="-20" y="290" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="a42858af-6b58-425e-b6be-2b44e60d3162" x="-20" y="320" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="90b07031-9246-48b5-8103-5dfd64605ab4" x="-20" y="350" width="80" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="f3130533-9272-48ec-95eb-4d9cc630bdf5" x="60" y="110" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="e1e5507d-e5a3-42aa-a855-4f0685c600d2" x="60" y="140" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="9714e44f-27d2-46cd-a725-40cc1f1f3094" x="60" y="170" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="5cd1c4c3-c3c1-49a5-8b71-ae655ebfa399" x="60" y="200" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="3ba5fe18-fea8-4f0c-a718-6a27e59d29e1" x="60" y="230" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="a7dd9e2d-0c57-47f4-98e1-17ae16b7403b" x="60" y="260" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="cf854f9b-f218-4e20-af26-af2a9d0e7f64" x="60" y="290" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="5377a781-0420-489d-985c-c3a50419b13d" x="60" y="320" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+		<element kind="textField" uuid="820ec858-a2af-4c6d-90de-cb69c892c5e9" x="60" y="350" width="290" height="30">
+			<expression><![CDATA["Text Field"]]></expression>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="79" splitType="Stretch"/>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
