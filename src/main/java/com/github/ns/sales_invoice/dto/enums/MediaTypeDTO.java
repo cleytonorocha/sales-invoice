@@ -1,4 +1,4 @@
-package com.github.ns.sales_invoice.dto;
+package com.github.ns.sales_invoice.dto.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 

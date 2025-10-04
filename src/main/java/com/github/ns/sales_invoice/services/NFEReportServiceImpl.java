@@ -1,6 +1,6 @@
 package com.github.ns.sales_invoice.services;
 
-import com.github.ns.sales_invoice.dto.MediaTypeDTO;
+import com.github.ns.sales_invoice.dto.enums.MediaTypeDTO;
 import com.github.ns.sales_invoice.services.interfaces.NFEReportService;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.core.io.ClassPathResource;
