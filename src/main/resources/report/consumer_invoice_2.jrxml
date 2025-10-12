@@ -1,0 +1,1447 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="consumer_invoice_2" language="java" columnCount="1" pageWidth="595" pageHeight="793" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d1272bd-895f-4e71-b21e-bb723b06985b">
+	<property name="net.sf.jasperreports.when.no.data.type" value="AllSectionsNoDetail"/>
+	<dataset name="products" uuid="e6d89f39-22fd-415a-a19f-09f5fb3912d0">
+		<query language="sql"><![CDATA[]]></query>
+		<field name="productCode" class="java.lang.String"/>
+		<field name="productDescription" class="java.lang.String"/>
+		<field name="fiscalClassification" class="java.lang.String"/>
+		<field name="taxSituation" class="java.lang.String"/>
+		<field name="unit" class="java.lang.String"/>
+		<field name="quantity" class="java.math.BigDecimal"/>
+		<field name="unitPrice" class="java.math.BigDecimal"/>
+		<field name="totalPrice" class="java.math.BigDecimal"/>
+		<field name="icmsRate" class="java.math.BigDecimal"/>
+		<field name="ipiValue" class="java.math.BigDecimal"/>
+	</dataset>
+	<query language="sql"><![CDATA[]]></query>
+	<field name="logo" class="java.awt.image.BufferedImage"/>
+	<field name="invoiceNumber" class="java.lang.String"/>
+	<field name="operationType" class="java.lang.String"/>
+	<field name="copyType" class="java.lang.String"/>
+	<field name="issuerName" class="java.lang.String"/>
+	<field name="issuerAddress" class="java.lang.String"/>
+	<field name="issuerDistrict" class="java.lang.String"/>
+	<field name="issuerCity" class="java.lang.String"/>
+	<field name="issuerState" class="java.lang.String"/>
+	<field name="issuerZipCode" class="java.lang.String"/>
+	<field name="issuerPhoneFax" class="java.lang.String"/>
+	<field name="recipientName" class="java.lang.String"/>
+	<field name="recipientCnpj" class="java.lang.String"/>
+	<field name="recipientCpf" class="java.lang.String"/>
+	<field name="recipientAddress" class="java.lang.String"/>
+	<field name="recipientDistrict" class="java.lang.String"/>
+	<field name="recipientCity" class="java.lang.String"/>
+	<field name="recipientState" class="java.lang.String"/>
+	<field name="recipientZipCode" class="java.lang.String"/>
+	<field name="recipientPhoneFax" class="java.lang.String"/>
+	<field name="recipientStateRegistration" class="java.lang.String"/>
+	<field name="recipientTaxSubstituteRegistration" class="java.lang.String"/>
+	<field name="recipientCfop" class="java.lang.String"/>
+	<field name="issueDate" class="java.time.LocalDate"/>
+	<field name="shippingDate" class="java.time.LocalDate"/>
+	<field name="invoiceNumberReference" class="java.lang.String"/>
+	<field name="products" class="java.util.List"/>
+	<field name="icmsBase" class="java.math.BigDecimal"/>
+	<field name="icmsValue" class="java.math.BigDecimal"/>
+	<field name="icmsSubstitutionBase" class="java.math.BigDecimal"/>
+	<field name="icmsSubstitutionValue" class="java.math.BigDecimal"/>
+	<field name="totalProductsValue" class="java.math.BigDecimal"/>
+	<field name="freightValue" class="java.math.BigDecimal"/>
+	<field name="insuranceValue" class="java.math.BigDecimal"/>
+	<field name="otherExpenses" class="java.math.BigDecimal"/>
+	<field name="totalIpiValue" class="java.math.BigDecimal"/>
+	<field name="totalInvoiceValue" class="java.math.BigDecimal"/>
+	<field name="transporterName" class="java.lang.String"/>
+	<field name="transporterAddress" class="java.lang.String"/>
+	<field name="transporterCity" class="java.lang.String"/>
+	<field name="transporterState" class="java.lang.String"/>
+	<field name="transporterCnpj" class="java.lang.String"/>
+	<field name="transporterVehiclePlate" class="java.lang.String"/>
+	<field name="transporterVehicleState" class="java.lang.String"/>
+	<field name="transporterStateRegistration" class="java.lang.String"/>
+	<field name="freightByRecipient" class="java.lang.Boolean"/>
+	<field name="additionalInformation" class="java.lang.String"/>
+	<field name="reservedForTaxAuthority" class="java.lang.String"/>
+	<field name="formControlNumber" class="java.lang.String"/>
+	<field name="receiptDate" class="java.time.LocalDate"/>
+	<field name="receiptSignature" class="java.lang.String"/>
+	<field name="footerMessage" class="java.lang.String"/>
+	<background splitType="Stretch"/>
+	<title height="42" splitType="Stretch">
+		<element kind="staticText" uuid="a3a5e8b5-8ee6-4510-906e-3f47ef404df7" x="249" y="16" width="57" height="10" fontName="DejaVu Sans" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[NOTA FISCAL]]></text>
+		</element>
+	</title>
+	<detail>
+		<band height="663" splitType="Stretch">
+			<element kind="frame" uuid="01b44100-8bff-4b0d-bfc8-6b6bda6eebe8" x="0" y="0" width="555" height="663">
+				<element kind="staticText" uuid="753447cc-7a24-4d06-ba27-f0d00d7730ab" x="19" y="27" width="37" height="7" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Bottom">
+					<text><![CDATA[EMITENTE]]></text>
+				</element>
+				<element kind="image" uuid="955a6689-2515-47d3-8a59-5f7f650e5bd1" x="16" y="40" width="45" height="64" linkType="None" linkTarget="Self" hImageAlign="Center" vImageAlign="Middle"/>
+				<element kind="staticText" uuid="72da0f35-8a64-4cec-9ce8-6e670a6c75f7" x="67" y="41" width="73" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Top">
+					<text><![CDATA[NOME / RAZÃO SOCIAL]]></text>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="staticText" uuid="4228b04a-c380-4874-b485-b4e523850da4" x="68" y="60" width="38" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<text><![CDATA[ENDEREÇO]]></text>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="staticText" uuid="a2f9b7f2-4222-48a0-a9a1-55482f36fba9" x="68" y="71" width="38" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<text><![CDATA[MUNICÍPIO]]></text>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="staticText" uuid="fc006c77-d429-4572-8303-2179ca5e5a47" x="68" y="82" width="38" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<text><![CDATA[FONE / FAX]]></text>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="staticText" uuid="700b0681-19d3-4790-ad2a-c57e9d1bff75" x="283" y="85" width="10" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<text><![CDATA[CEP]]></text>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="staticText" uuid="416f0808-56ff-4378-820a-88ad15d01c67" x="283" y="74" width="10" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<text><![CDATA[UF]]></text>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="staticText" uuid="afd903c1-1aad-42f4-b947-ae4069cdb99b" x="299" y="59" width="61" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<text><![CDATA[BAIRRO/DISTRITO]]></text>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="staticText" uuid="8a213da8-ecad-4258-a840-9d014a63b3a6" x="359" y="42" width="27" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<text><![CDATA[SAÍDA]]></text>
+					<box leftPadding="2"/>
+				</element>
+				<element kind="frame" uuid="b7c7b565-934a-428d-af04-5c4b4be25655" x="350" y="42" width="9" height="9">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<element kind="textField" uuid="16b8d0b6-94d7-490a-9dcb-51d315dbc077" x="0" y="0" width="9" height="9" fontName="DejaVu Sans" fontSize="7.0" hTextAlign="Center" vTextAlign="Middle">
+						<expression><![CDATA[$F{operationType}.equals( "saida" ) ? "X" : ""]]></expression>
+						<box leftPadding="0">
+							<pen lineWidth="0.25"/>
+							<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+					</element>
+				</element>
+				<element kind="staticText" uuid="53f6728d-82d3-4644-9ad3-31f6caca3b25" x="407" y="42" width="37" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<text><![CDATA[ENTRADA]]></text>
+					<box leftPadding="2"/>
+				</element>
+				<element kind="frame" uuid="05250233-c53c-4dcf-8ff1-bc315d681b3f" x="398" y="42" width="9" height="9">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<element kind="textField" uuid="7d427048-1aba-4630-bef9-b24653e6ab9a" x="0" y="0" width="9" height="9" fontName="DejaVu Sans" fontSize="7.0" hTextAlign="Center" vTextAlign="Middle">
+						<expression><![CDATA[$F{operationType}.equals( "entrada" ) ? "X" : ""]]></expression>
+						<box leftPadding="0">
+							<pen lineWidth="0.25"/>
+							<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+					</element>
+				</element>
+				<element kind="staticText" uuid="1042c306-2dfb-4643-a6d5-46109e8a0fd9" x="449" y="5" width="97" height="9" fontName="DejaVu Sans" fontSize="6.0" hTextAlign="Right" vTextAlign="Middle">
+					<text><![CDATA[NOTA FISCAL Nº 000.000]]></text>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="textField" uuid="03298d01-8c06-4746-8e02-1d65c225d3c2" x="481" y="68" width="27" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<expression><![CDATA[$F{copyType}]]></expression>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="staticText" uuid="8ccd5106-e2ad-4cb1-a5f8-3448b037d91b" x="482" y="119" width="64" height="20" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<text><![CDATA[DESTINATÁRIO / REMETENTE]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="71423f18-f027-487f-9229-74cbf2f3273b" x="482" y="139" width="64" height="12" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Top">
+					<text><![CDATA[DATA LIMITE PARA
+EMISSÃO]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="d38018ac-6979-4653-98ca-68b84a066397" x="482" y="151" width="64" height="12" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Center" vTextAlign="Top">
+					<expression><![CDATA["00.00.00"]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="44896703-89de-4b64-be49-125defca2d2d" x="482" y="221" width="64" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[DATA DA EMISSÃO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="a26c6859-6e35-4436-9828-3127059cb311" x="482" y="229" width="64" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="4f8336d6-fff8-4a4f-97d0-5680a2d0be21" x="358" y="221" width="108" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="319c01e5-2431-44cc-94bb-7445b6da6da2" x="358" y="229" width="108" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="e916a0a8-50ff-46a9-907e-c7d79641675e" x="227" y="229" width="109" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="6c85fa64-7b9c-44ab-a0c2-eb87d63afd83" x="227" y="221" width="109" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[FONE / FAX]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="0d7280cf-d478-41c5-bf29-87bcf43ed8c8" x="336" y="229" width="22" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="61f1618a-a204-43c6-959f-d012064d2150" x="336" y="221" width="22" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[UF]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="5b383085-7ce4-45d7-85fc-bcfc759e0d91" x="10" y="221" width="217" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[MUNICÍPIO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="0df00b72-0979-4f36-8907-505213b15bdb" x="10" y="229" width="217" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="3edd9ef6-03c6-43dd-95c8-2e907d3aae4d" x="10" y="261" width="536" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="5130a7d6-74fa-4280-af1f-ccc753eae392" x="10" y="248" width="88" height="10" fontName="DejaVu Sans" fontSize="8.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[FATURA]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="cec4f61a-edf2-4d70-90de-aa680448ca3c" x="10" y="281" width="88" height="10" fontName="DejaVu Sans" fontSize="8.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[DADOS DO PRODUTO]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="component" uuid="3e4be339-e85c-4957-aa20-9a7b31f07174" x="10" y="293" width="536" height="43">
+					<component kind="list">
+						<datasetRun uuid="2364b0ae-d4b6-483a-82b4-0e79d4506119" subDataset="products">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource() ]]></dataSourceExpression>
+						</datasetRun>
+						<contents height="43" width="536">
+							<element kind="staticText" uuid="35295b2a-4da6-4515-8cfe-489e675d09ff" x="0" y="0" width="50" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[CÓDIGO
+PRODUTO]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="a96e57eb-9d45-446d-afb9-df3de108f5db" x="50" y="0" width="110" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[DESCRIÇÃO DOS PRODUTOS]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="3f812696-5a16-45fe-af4c-a7f464076d2c" x="160" y="0" width="50" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[CLASSIFICAÇÃO
+FISCAL]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="614d60db-bdc3-49d4-ba42-3cd7d898c1f0" x="210" y="0" width="50" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[SITUAÇÃO
+TRIBUTÁRIA]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="c97a5cb9-5816-424d-8d59-ec26d341ec89" x="260" y="0" width="40" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[UNIDADE]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="1a1445b2-b747-4e1f-85b2-8742c6e42648" x="300" y="0" width="40" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[QUANTIDADE]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="42f291e2-57c9-4305-9e11-cecaebaefa80" x="340" y="0" width="50" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[VALOR UNITÁRIO]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="c7df12e3-4b2a-4b19-84fb-f63b5b921900" x="390" y="0" width="50" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[VALOR TOTAL]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="9343785b-d709-44bf-8876-2ec07e98f64c" x="490" y="0" width="46" height="10" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[VALOR DO IPI]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="5a3da400-f5eb-4a13-a1a0-39b15881f3be" x="440" y="0" width="50" height="5" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[ALÍQUOTAS]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="db95286a-123e-46c4-aab5-a8eb95f33434" x="440" y="5" width="25" height="5" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[ICMS]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="staticText" uuid="b42c4d91-fd5b-4ce3-849d-ed2ab1cb1462" x="465" y="5" width="25" height="5" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[IPI]]></text>
+								<box padding="0">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="4e25b668-bc8d-451d-8a88-12ae4784c6eb" x="0" y="10" width="50" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="96a322f3-88ee-4c9f-be5a-3bc2ade18b6e" x="50" y="10" width="110" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="f79ac585-d798-40fa-8847-7ee323910f9f" x="160" y="10" width="50" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="2b3053d8-f9b6-4e3a-83cf-100aa0153488" x="210" y="10" width="50" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="6d4910ee-d9bb-456d-9a3a-4472745f5df6" x="260" y="10" width="40" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="5c4a64ed-0a2c-4af0-8ec4-3f1fb1735185" x="300" y="10" width="40" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="3b9b1a4a-377c-4fab-8dad-d77285be2b3d" x="340" y="10" width="50" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="32e628f3-75af-44f2-9e21-f5f65b2d73ed" x="390" y="10" width="50" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="7f93fce2-b101-43f4-afb6-878e6c2ecea4" x="440" y="10" width="25" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="4c293eac-0376-45ac-a078-aa168c59ecfc" x="465" y="10" width="25" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+							<element kind="textField" uuid="2b68529a-6109-44f7-bb3e-d1467c620b73" x="490" y="10" width="46" height="30" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+								<expression><![CDATA[""]]></expression>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<box leftPadding="3">
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+							</element>
+						</contents>
+					</component>
+				</element>
+				<element kind="staticText" uuid="a1681b3b-10f2-40b3-8f36-b406cf6457e8" x="10" y="351" width="101" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[BASE DE CÁLCULO DO ICMS]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="413e3708-6aa2-4db0-99f5-dbb7b603a7e9" x="11" y="338" width="88" height="11" fontName="DejaVu Sans" fontSize="8.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[CÁLCULO DO IMPOSTO]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="da858a65-7678-42ce-b07c-68bdde10fd08" x="10" y="360" width="101" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="590c5edd-b02d-4123-a095-823b57aa04a6" x="10" y="457" width="270" height="19" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="a2cf47e9-2e16-4000-9f75-b5a1ffd653bf" x="10" y="448" width="270" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[NOME / RAZÃO SOCIAL]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="1735a35f-636e-47ab-967d-793b95807fb4" x="10" y="434" width="139" height="12" fontName="DejaVu Sans" fontSize="8.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[TRANSPORTADOR / VOLUMES TRANSPORTADOS]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="28633631-b5c9-4089-aabf-be41c5290eff" x="10" y="476" width="270" height="11" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[ENDEREÇO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="88e761b2-6d71-43ea-bd84-b441752dd0e0" x="10" y="487" width="270" height="20" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="b6f3af10-9564-4cc0-93ec-ba1632a74fe8" x="280" y="448" width="52" height="28" fontName="DejaVu Sans" fontSize="4.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[FRETE POR CONTA
+1 EMITENTE
+2 DESTINATÁRIO]]></text>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box topPadding="6" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="frame" uuid="fcaacfcc-c8a1-455c-8499-27971eda6b58" x="321" y="459" width="9" height="9">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<element kind="staticText" uuid="142d4b2b-b019-4525-8389-44a136582a93" x="0" y="0" width="9" height="9" fontName="DejaVu Sans" fontSize="7.0" hTextAlign="Center" vTextAlign="Middle">
+						<text><![CDATA[1]]></text>
+						<box leftPadding="0">
+							<pen lineWidth="0.25"/>
+							<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+					</element>
+				</element>
+				<element kind="textField" uuid="d4136dca-f23d-406e-ab57-3f61681323cc" x="332" y="457" width="79" height="19" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="672b14c5-9269-46a9-95e4-53b07a43689c" x="411" y="487" width="20" height="20" fontName="DejaVu Sans" fontSize="3.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="13c18856-dfda-4884-9a28-4f6dfdb7c618" x="411" y="476" width="20" height="11" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<text><![CDATA[UF]]></text>
+					<box topPadding="1" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="acefb85f-7b17-4a5c-9927-6dd9fc52cf30" x="431" y="487" width="115" height="20" fontName="DejaVu Sans" fontSize="3.0" bold="false" hTextAlign="Left" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="8eb6f96d-d37b-4cd1-927d-328472475d7c" x="431" y="476" width="115" height="11" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Left" vTextAlign="Middle">
+					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
+					<box topPadding="1" leftPadding="4">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="50ea1d51-bdb8-493a-b9f6-96d288eead12" x="280" y="476" width="131" height="11" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Left" vTextAlign="Middle">
+					<text><![CDATA[MUNICÍPIO]]></text>
+					<box topPadding="1" leftPadding="4">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="c28c9467-31c6-495d-ae48-067d2f648d05" x="280" y="487" width="131" height="20" fontName="DejaVu Sans" fontSize="3.0" bold="false" hTextAlign="Left" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="1aa82899-bf92-40ef-8227-ff2d8eb1a554" x="10" y="516" width="88" height="12" fontName="DejaVu Sans" fontSize="8.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[DADOS ADICIONAIS]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="cbbf2955-cb25-4b3c-898f-c89dae333d30" x="10" y="528" width="239" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[INFORMAÇÕES COMPLEMENTARES]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="b0bc5e1f-fedd-4dba-970b-da52df13748e" x="10" y="536" width="239" height="46" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="09b34431-3d88-432c-a606-e0f15fcda15a" x="488" y="528" width="58" height="54" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<text><![CDATA[N° DE CONTROLE
+DO FORMULÁRIO
+
+000.000]]></text>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="ca2322ba-e24d-4028-b6e7-0ffe1726d8fc" x="10" y="597" width="88" height="5" fontName="DejaVu Sans" fontSize="4.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[DADOS DA AIDF E DO IMPRESSOR]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="line" uuid="b33a49cc-45e3-498d-bd80-238420e7649d" x="0" y="602" width="555" height="1">
+					<pen lineWidth="0.55" lineStyle="Dashed"/>
+				</element>
+				<element kind="staticText" uuid="e36cb170-e5b5-46d8-b340-d8c62042f148" x="10" y="608" width="478" height="19" fontName="DejaVu Sans" fontSize="8.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<text><![CDATA[RECEBEMOS DE (RAZÃO SOCIAL DO EMITENTE) OS PRODUTOS CONSTANTES DA NOTA FISCAL INDICADA AO LADO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="0e5c36b2-4d55-4221-bddf-e9e7519e44f6" x="488" y="608" width="58" height="47" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<text><![CDATA[NOTA FISCAL
+N° 000.000]]></text>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="7480121e-6a0a-4a32-a129-f8674cfd1334" x="10" y="640" width="139" height="15" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="2c6129d4-86c9-44c4-9de1-88eddbebecb4" x="10" y="627" width="139" height="13" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<text><![CDATA[DATA DO RECEBIMENTO]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="21d69844-f771-465b-b177-d6da019701d4" x="149" y="627" width="339" height="13" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Left" vTextAlign="Middle">
+					<text><![CDATA[DATA DO RECEBIMENTO]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="44959a3a-596c-42e5-b951-acbd601cafb6" x="149" y="640" width="339" height="15" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="cdecf973-b34a-48ed-b67b-691ac1a1f2de" x="249" y="528" width="239" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[RESERVADO AO FISCO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="d1b7be2f-9b90-4529-b656-9698922010dd" x="249" y="536" width="239" height="46" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="667d92c8-998c-407c-9ed3-324a4fcebc4f" x="332" y="448" width="79" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[PLACA DO VEÍCULO]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="837ccdae-f746-4b70-b226-b6532de90477" x="411" y="448" width="20" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<text><![CDATA[UF]]></text>
+					<box topPadding="1" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="55c58d64-3949-4477-a566-2fb14347e532" x="411" y="457" width="20" height="19" fontName="DejaVu Sans" fontSize="3.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="f7e61508-443a-41ff-bd3c-58e6e402a908" x="431" y="448" width="115" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[CNPJ / CPF]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="acd9653b-dd6e-4d69-baa1-c88604a71462" x="431" y="457" width="115" height="19" fontName="DejaVu Sans" fontSize="3.0" bold="false" hTextAlign="Left" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="dbdbf49d-531d-4624-b27d-2185d0542bb5" x="10" y="391" width="101" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="3e077225-d17d-442c-8f09-a540fae0f34c" x="10" y="382" width="101" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[VALOR DO FRETE]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="b4102a36-b2b2-4abb-8946-04cc032b4a31" x="111" y="360" width="101" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="723e0ec5-51cd-4975-89c9-61a4de9db17e" x="111" y="382" width="101" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[VALOR DO SEGURO]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="2fa4207a-c632-4324-aec6-764f6bb6fd35" x="111" y="391" width="101" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="c070c5fa-b94d-4db8-a5e4-f1b7abbd81cb" x="111" y="351" width="101" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[VALOR DO ICMS]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="f8ec7bd3-9a6c-407e-a1cb-eb892ef41af4" x="212" y="360" width="132" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="85c9750e-f4e1-4127-937f-a8d98ce8fe9b" x="212" y="382" width="132" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[OUTRAS DESPESAS ASSESSÓRIAS]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="d5500133-2899-4955-be8c-af0de3b0d37c" x="212" y="391" width="132" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="4624a0f9-00fe-4057-85f5-7d7ea7374bd3" x="212" y="351" width="132" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[BASE DE CÁLCULO ICMS SUBSTITUIÇÃO]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="b9d76bb3-cbd0-46a4-b130-a8b72e03001f" x="344" y="360" width="101" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="684962fd-dd5b-4b52-a4d7-51909ded8ba4" x="344" y="382" width="101" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[VALOR TOTAL DO IPI]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="21fdc385-5d6d-44e4-9e24-a924c7610cd2" x="344" y="391" width="101" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="a25a4b20-b971-420d-a4b5-2bd008685324" x="344" y="351" width="101" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[VALOR DO ICMS SUBSTITUIÇÃO]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="e062141e-ac4c-4fa9-be2c-2b8f118c1836" x="445" y="360" width="101" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="9722c83e-4811-404f-ae0e-d6fb965258ac" x="445" y="351" width="101" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[VALOR TOTAL DOS PRODUTOS]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="06eef274-2fcb-45f1-9441-7615c471d1f7" x="445" y="382" width="101" height="9" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[VALOR TOTAL DA NOTA]]></text>
+					<box topPadding="1" leftPadding="2">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="8a691dc3-743b-49e2-8f0a-12b72ce70ce2" x="445" y="391" width="101" height="22" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="28742a86-95ed-48cd-9c1e-2b1606991116" x="10" y="207" width="252" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="5de6b219-880a-4486-93e6-5055f71ec40e" x="262" y="207" width="135" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="277db86e-53f1-4033-b6a1-922b423fbd0c" x="397" y="207" width="69" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="0bf8356e-580c-4d51-b77a-588adea86fb2" x="10" y="199" width="252" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[ENDEREÇO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="ef6505f8-8f83-4146-afd9-2d6c94c87b58" x="262" y="199" width="135" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[BAIRRO / DISTRITO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="ddd46556-5ae8-474f-902b-2697612eff61" x="397" y="199" width="69" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[CEP]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="a0a91f29-1ab5-4c83-bb5f-b1ef5979d805" x="10" y="185" width="341" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="e97bed9b-2286-4fe5-b215-4d7449c56192" x="351" y="185" width="115" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="4b02889b-2513-4879-9b2e-49375a461679" x="351" y="177" width="115" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[CNPJ / CPF]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="3c6687b2-6762-401e-8a17-9d19121f4aa9" x="10" y="177" width="341" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[NOME / RAZÃO SOCIAL]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="cbafd7ca-eb2e-442d-bdb9-2a47d7f62963" x="10" y="165" width="119" height="10" fontName="DejaVu Sans" fontSize="8.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[DESTINATÁRIO REMETENTE]]></text>
+					<box topPadding="0" leftPadding="0">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="b281f15c-1920-488d-a175-d012d6dee76f" x="482" y="199" width="64" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[DATA SAÍ/ ENT]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="0c318548-8c1a-45fd-9960-d727f8fcae09" x="482" y="207" width="64" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="bcabe32c-db48-4517-95ad-905b1634e2b7" x="482" y="177" width="64" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<text><![CDATA[DATA DA EMISSÃO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="37d5afa8-01a7-4d97-aefb-3cadab9dac20" x="482" y="185" width="64" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" hTextAlign="Left" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="52d53aba-aacc-4b6b-bf30-f9943be86905" x="10" y="141" width="148" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[NOME / RAZÃO SOCIAL]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="95dc25af-d976-4904-8009-a9de14ef63c6" x="10" y="149" width="148" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[$F{issuerName}]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="99fb3851-ed91-42cb-a013-6df3bf44ea09" x="158" y="149" width="21" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[$F{recipientCfop}]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="be3f46b0-c2e5-4530-af68-5077c7ae4a68" x="158" y="141" width="21" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[CFOP]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="edd1a883-c4c2-4d15-896c-58f95fd45230" x="179" y="149" width="172" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="24fd59c5-4225-4b92-9f4e-68cae65eb10d" x="179" y="141" width="172" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[INSCRIÇÃO ESTADUAL DO SUBSTITUTO TRIBUTÁRIO]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="4f3f763b-ad25-4d5b-81ae-36b97ad311bd" x="351" y="141" width="115" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="18b1752f-194c-47e1-90fd-3d19f0b9bd98" x="351" y="149" width="115" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="a5503045-e929-4192-a5e9-dbea48e358e8" x="351" y="127" width="115" height="14" fontName="DejaVu Sans" fontSize="3.0" bold="false" vTextAlign="Top">
+					<expression><![CDATA[""]]></expression>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<box leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="staticText" uuid="f85366d9-b607-4a36-aff6-475ab32d7b0f" x="351" y="119" width="115" height="8" fontName="DejaVu Sans" fontSize="6.0" bold="false" vTextAlign="Top">
+					<text><![CDATA[CNPJ]]></text>
+					<box topPadding="1" leftPadding="3">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="af9f7325-7ba4-4ca6-aed9-965acbf413f9" x="106" y="60" width="145" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="textField" uuid="1fd2bc3e-4be9-4141-8ff3-0acbe4de326b" x="106" y="71" width="145" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="textField" uuid="65e4945d-bb51-4895-aa9b-424bfd8fd8f7" x="106" y="82" width="145" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="textField" uuid="b33679a0-3b91-4f4d-8626-a9aaf38fad52" x="293" y="74" width="12" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="textField" uuid="980ffaf3-9bcd-4a0e-b06d-d1c276abac81" x="293" y="85" width="12" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="textField" uuid="351d2919-96f5-49ef-8184-39c43ca430af" x="140" y="41" width="145" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<box leftPadding="0"/>
+				</element>
+				<element kind="textField" uuid="ea51319e-2039-4ba0-9d68-ba92355c4bcd" x="360" y="59" width="47" height="9" fontName="DejaVu Sans" fontSize="6.0" vTextAlign="Middle">
+					<expression><![CDATA[""]]></expression>
+					<box leftPadding="0"/>
+				</element>
+				<box padding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</element>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+		</band>
+	</detail>
+	<pageFooter height="40" splitType="Stretch">
+		<element kind="staticText" uuid="8f150d06-a7d7-4412-b199-7f41606fc5fe" x="113" y="10" width="328" height="20" forecolor="#FF0905" fontName="DejaVu Sans" fontSize="12.0" hTextAlign="Center">
+			<text><![CDATA[ESTE DOCUMENTO NÃO É UMA NOTA FISCAL VÁLIDA!]]></text>
+		</element>
+	</pageFooter>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

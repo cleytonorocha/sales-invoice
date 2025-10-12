@@ -1,6 +1,9 @@
 package com.github.ns.sales_invoice.controller;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -19,20 +22,20 @@ import com.github.ns.sales_invoice.services.interfaces.NFEReportService;
 import lombok.AllArgsConstructor;
 import net.sf.jasperreports.engine.JRException;
 
-
 @RestController
 @AllArgsConstructor
 @RequestMapping(value = "reports", produces = {
         MediaTypes.APPLICATION_CSV_VALUE,
         MediaTypes.APPLICATION_PDF_VALUE,
-        MediaTypes.APPLICATION_XLSX_VALUE})
+        MediaTypes.APPLICATION_XLSX_VALUE })
 
 public class NFEReportController {
 
     private NFEReportService reportService;
 
     @PostMapping("/consumerInvoiceReport{type}")
-    public ResponseEntity<byte[]> generateConsumerInvoiceReport(@PathVariable("type") Integer type, @RequestBody ConsumerInvoiceNFEDTO invoice) {
+    public ResponseEntity<byte[]> generateConsumerInvoiceReport(@PathVariable("type") Integer type,
+            @RequestBody ConsumerInvoiceNFEDTO invoice) {
         try {
             List<ConsumerInvoiceNFEDTO> data = List.of(invoice);
             byte[] file = reportService.generateReport(data, "consumer_invoice.jrxml", type);
@@ -63,9 +66,7 @@ public class NFEReportController {
     public ResponseEntity<byte[]> generateConsumerInvoiceReport2(@PathVariable("type") Integer type,
             @RequestBody ReportModel invoice) {
         try {
-
-            List<ReportModel> data = List.of(invoice);
-            byte[] file = reportService.generateReport(data, "consumer_invoice._2.jrxml", type);
+            byte[] file = reportService.generateReportModel2(invoice, type);
 
             String fileName = switch (type) {
                 case 1 -> "report.pdf";
@@ -85,6 +86,9 @@ public class NFEReportController {
                     .body(file);
         } catch (JRException e) {
             throw new RuntimeException(e);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
