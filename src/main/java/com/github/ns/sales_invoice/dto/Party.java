@@ -1,6 +1,8 @@
 package com.github.ns.sales_invoice.dto;
 
+import java.awt.image.BufferedImage;
 public record Party(
+    BufferedImage logo,
     String name,
     String cnpjCpf,
     String address,
